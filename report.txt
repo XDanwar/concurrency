@@ -1,0 +1,28 @@
+                                 理解Thread构造函数
+1.Thread()
+     默认构造函数（继承Thread类来实现线程执行单元）
+2.Tread(Runnable runner)
+    通过实现Runnable接口来实现线程执行单元
+3.Tread(ThreadGroup group,Runnable runner)
+  在第2个的基础上说明线程所属的线程组（线程组提供进一步管理现成的功能）
+4.Thread(String name)
+  在第1个基础上说明正在运行的线程名字，若不提供自定义名字则系统提供默认的名字
+  ，默认为T和read-{n}n递增
+5.Tread(ThreadGroup group,Runnable runner,String name)
+  在第3个基础上说明线程名字
+6.Tread(ThreadGroup group,Runnable runner,String name,long stacksize)
+在第5个的基础上设置线程运行时的堆栈大小
+7.Tread(ThreadGroup group,String name)
+             
+                                              线程名字的修改
+ 1.构建线程对象时传递线程名字
+ 2.线程构建后在调用start方法前调用setName方法（线程启动后无法修改）
+                     
+                                             线程的父子关系
+1.一个线程肯定是在另一个线程内创建的（父线程）
+
+                                             守护线程
+1.守护线程在后台运行并服务于其他线程                                             
+2.JVM正常退出的条件为，没有在运行的非守护线程
+3.任何新创建线程在运行之前（start方法)调用之前能够通过setDamon方法设置为守护线程
+通过isDamon方法判断一个线程是否为守护线程                   
